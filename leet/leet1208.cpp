@@ -1,4 +1,4 @@
-// ACCEPTED!
+// ACCEPTED! (daily - May 28th, 2024)
 
 #include <bits/stdc++.h>
 using namespace std;
