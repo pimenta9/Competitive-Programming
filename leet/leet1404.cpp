@@ -1,15 +1,61 @@
+// ACCEPTED!
+
 #include <bits/stdc++.h>
 using namespace std;
 
 int numSteps(string s)
 {
-    long long x = 0;
+    if (s == "1") return 0;
+
     int n = s.size();
 
-    for (int i = (n - 1); i >= 0; i--)
+    bool number[n + 1];
+
+    // [1] [0] [1] [1] ...
+    // 2^0 2^1 2^2 2^3 ...
+
+    for (int i = 0; i < n; i++)
     {
-        
+        number[i] = (s[(n - 1) - i] - '0') ? true : false;
     }
+    number[n] = false;
+
+    int index = 0, steps = 0;
+
+    while (true)
+    {
+        steps++;
+
+        // odd -> add 1
+        if (number[index] == true)
+        {
+            int i;
+            for (i = index; number[i]; i++)
+            {
+                number[i] = false;
+            }
+            number[i] = true;
+        }
+        else // even -> divide by 2
+        {
+            index++;
+        }
+
+        if (index == (n - 1))
+        {
+            if (number[n] == true)
+            {
+                steps++;
+                return steps;
+            }
+            else
+            {
+                return steps;
+            }
+        }
+    }
+
+    return 0;
 }
 
 int main ()
