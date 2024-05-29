@@ -8,7 +8,7 @@ int numSteps(string s)
 
     for (int i = (n - 1); i >= 0; i--)
     {
-        x += 1;
+        
     }
 }
 
