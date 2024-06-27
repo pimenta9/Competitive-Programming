@@ -1,7 +1,5 @@
 /// CSES 1649
 
-// ACCEPTED
-
 #include <bits/stdc++.h>
 using namespace std;
 
