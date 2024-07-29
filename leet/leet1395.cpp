@@ -1,4 +1,4 @@
-// ACCEPTED!
+// ACCEPTED!!
 
 int numTeams(vector<int>& rating)
 {
