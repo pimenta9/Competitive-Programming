@@ -1,27 +1,19 @@
-// ACCEPTED!
+// ACCEPTED
 
-#include <bits/stdc++.h>
-using namespace std;
+vector<int> twoSum(vector<int>& nums, int target)
+{
+    map<int, int> m;
 
-class Solution {
-public:
-    vector<int> twoSum(vector<int>& nums, int target)
+    for(int i = 0; i < nums.size(); i++)
     {
-        int n = nums.size();
-        vector<int> answer;
-
-        for (int i = 0; i < (n - 1); i++)
+        int indexSum = m[target - nums[i]];
+        if(indexSum != 0)
         {
-            for (int j = (i + 1); j < n; j++)
-            {
-                if (nums[i] + nums[j] == target)
-                {
-                    answer.push_back(i);
-                    answer.push_back(j);
-                    return answer;
-                }
-            }
+            return {indexSum - 1, i};
         }
-        return answer;
+
+        m[nums[i]] = i + 1;
     }
-};
+
+    return {};
+}
