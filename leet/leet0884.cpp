@@ -1,4 +1,4 @@
-// ACCEPTED!
+// ACCEPTED! (beats 100%)
 
 class Solution {
 public:
