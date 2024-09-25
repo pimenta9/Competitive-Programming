@@ -1,55 +1,91 @@
-// ACCEPTED!
+// ACCEPTED (beats 50%)
 
 class Solution {
 public:
-    int numberLength(int num)
+    typedef struct TrieNode
     {
-        int length = 0;
+        vector<TrieNode*> children = {nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr};
 
-        while(num != 0)
+    } TrieNode;
+
+    // debug
+    void printTrie(TrieNode* root)
+    {
+        cout << "-------------\n";
+
+        queue<TrieNode*> q;
+
+        q.push(root);
+
+        while(!q.empty())
         {
-            length++;
+            TrieNode* node = q.front();
+            q.pop();
 
-            num /= 10;
+            for(int i = 0; i < 10; i++)
+            {
+                if(node->children[i] == nullptr)
+                    continue;
+                
+                cout << i << " ";
+
+                q.push(node->children[i]);
+            }
+
+            cout << endl;
         }
 
-        return length;
+        cout << "-------------\n";
     }
 
     int longestCommonPrefix(vector<int>& arr1, vector<int>& arr2)
     {
-        map<int, bool> prefix;
+        TrieNode* root = new TrieNode;
 
-        for(int x : arr1)
+        for(int num : arr1)
         {
-            while(x != 0 && prefix[x] == false)
+            string numStr = to_string(num);
+
+            TrieNode* node = root;
+
+            for(char d : numStr)
             {
-                cout << x << endl;
+                int digit = d - '0';
 
-                prefix[x] = true;
+                if(node->children[digit] == nullptr)
+                    node->children[digit] = new TrieNode;
 
-                x /= 10;
+                node = node->children[digit];
             }
         }
 
-        int max = 0;
+        int maxLength = 0;
 
-        for(int y : arr2)
+        for(int num : arr2)
         {
-            while(y != 0)
+            cout << num << endl;
+            string numStr = to_string(num);
+
+            TrieNode* node = root;
+
+            int length = 0;
+
+            for(char d : numStr)
             {
-                if(prefix[y] == true)
-                {
-                    int length = numberLength(y);
+                int digit = d - '0';
 
-                    if (length > max)
-                        max = length;
-                }
+                if(node->children[digit] == nullptr)
+                    break;
 
-                y /= 10;
+                length++;
+
+                node = node->children[digit];
             }
+
+            if(length > maxLength)
+                maxLength = length;
         }
 
-        return max;
+        return maxLength;
     }
 };
