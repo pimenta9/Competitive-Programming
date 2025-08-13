@@ -1,3 +1,5 @@
+// ACCEPTED!
+
 class SegTree {
 private:
     int n;
