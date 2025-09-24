@@ -1,1 +1,1 @@
-Some competitive programming problem solutions
+Some competitive programming problems solutions
