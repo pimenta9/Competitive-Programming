@@ -49,7 +49,7 @@ void dfs(const vvi& adj, vi& vis, int u)
         dfs(adj, vis, v);
     }
 }
-
+//
 int case_ = 1;
 void solve (vector<string> strs)
 {
