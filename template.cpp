@@ -21,6 +21,7 @@ using namespace std;
 #define eb emplace_back
 #define vi vector<int>
 #define vvi vector<vi>
+#define endl '\n'
 
 // consts
 // const int oo = 4e18;
