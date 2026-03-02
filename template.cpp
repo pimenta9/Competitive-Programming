@@ -27,6 +27,7 @@ using namespace std;
 // const long double pi = acos(-1.0);
 // const int mod = (int) 1e9+7;
 // const int MAXN = 1e5;
+// mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 
 // templates
 template < typename T = int > istream& operator >> (istream &in, vector < T > &v) {
