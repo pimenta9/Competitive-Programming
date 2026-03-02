@@ -11,9 +11,10 @@ using namespace std;
 #define gauss(x) ((x*(x+1))/2)
 #define all(vec) vec.begin(), vec.end()
 #define rall(vec) vec.rbegin(), vec.rend()
-#define sz(x) int(x.size())
+#define sz(x) int32_t(x.size())
 #define debug(x) cout << #x << ": " << (x) << "\n";
 #define rep(i, a, b) for(int i = a; i < b; i++)
+#define repr(i, a, b) for(int i = a; i >= b; i--)
 #define fi first
 #define se second
 #define pb push_back
@@ -22,10 +23,10 @@ using namespace std;
 #define vvi vector<vi>
 
 // consts
-const int oo = 4e18;
-const long double pi = acos(-1.0);
-const int mod = (int) 1e9+7;
-const int MAXN = 1e5;
+// const int oo = 4e18;
+// const long double pi = acos(-1.0);
+// const int mod = (int) 1e9+7;
+// const int MAXN = 1e5;
 
 // templates
 template < typename T = int > istream& operator >> (istream &in, vector < T > &v) {
